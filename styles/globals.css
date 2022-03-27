@@ -1,9 +1,12 @@
+@import url("https://unpkg.com/mvp.css");
+
 html,
 body {
   padding: 0;
-  margin: 0;
+  margin: 10px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #66c2ff;
 }
 
 a {
@@ -13,4 +16,22 @@ a {
 
 * {
   box-sizing: border-box;
+}
+aside {
+  background-color: #ffcc99;
+  width: 285px;
+  height: 305px;
+}
+
+.cocktailWrapper {
+  margin: 0 auto;
+  align-items: center;
+}
+h2 {
+  text-align: center;
+}
+.imgWrapper {
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
 }

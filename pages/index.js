@@ -11,7 +11,7 @@ export default function staticPage({ drinks }) {
       <section>
         {drinks.length > 0 &&
           drinks.map(({ idDrink, strDrink, strDrinkThumb }) => (
-            <Link key={idDrink} href={`static/${idDrink}/${slug(strDrink)}`}>
+            <Link key={idDrink} href={`/static/${idDrink}/${slug(strDrink)}`}>
               <a>
                 <aside className="card">
                   <div className="cocktailWrapper">
@@ -23,6 +23,7 @@ export default function staticPage({ drinks }) {
                         width={483}
                         height={483}
                         layout={"responsive"}
+                        priority={true}
                       />
                     </div>
                   </div>

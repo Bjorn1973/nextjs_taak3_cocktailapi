@@ -9,20 +9,23 @@ body {
   background-color: #66c2ff;
 }
 
-a {
+/* a {
   color: inherit;
   text-decoration: none;
-}
+} */
 
 * {
   box-sizing: border-box;
 }
-aside {
+
+section aside {
   background-color: #ffcc99;
   width: 285px;
   height: 305px;
 }
-
+section aside:hover {
+  box-shadow: 5px 5px 10px #ffff00;
+}
 .cocktailWrapper {
   margin: 0 auto;
   align-items: center;

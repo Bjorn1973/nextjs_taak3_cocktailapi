@@ -3,29 +3,21 @@ import axios from "axios";
 import Image from "next/Image";
 import { slug } from "../../../helpers";
 
-const cocktailDetail = ({ drinks }) => {
+const cocktailDetail = ({ drink: { strDrink, strDrinkThumb } }) => {
   return (
     <main>
-      <h1>detail of alcoholic Cocktail</h1>
-      <section>
-        {drinks.length > 0 &&
-          drinks.map(({ idDrink, strDrink, strDrinkThumb }) => (
-            <aside className="card" key={idDrink}>
-              <div className="cocktailWrapper">
-                <div className="imgWrapper">
-                  <Image
-                    src={strDrinkThumb}
-                    alt=""
-                    width={300}
-                    height={450}
-                    layout={"responsive"}
-                  />
-                </div>
-                <h2>{strDrink}</h2>
-              </div>
-            </aside>
-          ))}
-      </section>
+      <h1>detail of {strDrink}</h1>
+
+      <div className="imgWrapper">
+        <Image
+          src={strDrinkThumb}
+          alt=""
+          width={300}
+          height={450}
+          layout={"responsive"}
+        />
+      </div>
+      <h2>{strDrink}</h2>
     </main>
   );
 };
@@ -36,12 +28,12 @@ export const getStaticProps = async (req) => {
   const {
     params: { id, slug },
   } = req;
-  const { data: drinks } = await axios(
+  const { data: drink } = await axios(
     `https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic`
   );
   return {
     props: {
-      drinks,
+      drink,
     },
     revalidate: 30,
   };

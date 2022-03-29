@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/Link";
+import Link from "next/link";
 import react from "react";
 import axios from "axios";
 import { slug } from "../helpers";

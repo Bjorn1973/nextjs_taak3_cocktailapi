@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Image from "next/Image";
+import Image from "next/image";
 import { slug } from "../../../helpers";
 
 const cocktailDetail = ({

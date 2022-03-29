@@ -13,53 +13,71 @@ const cocktailDetail = ({
     strIngredient2,
     strIngredient3,
     strIngredient4,
-    trMeasure1,
-    trMeasure2,
-    trMeasure3,
-    trMeasure4,
+    strMeasure1,
+    strMeasure2,
+    strMeasure3,
+    strMeasure4,
   },
 }) => {
   return (
     <main>
       <h1>detail of {strDrink}</h1>
       <section>
-        <aside>
-          <div className="imgWrapper">
+        <aside className="detailAside">
+          <div className="imgWrapperDetail">
             <Image
               src={strDrinkThumb}
               alt={strDrink}
               width={300}
               height={450}
               layout={"responsive"}
+              priority
             />
           </div>
           <h2>{strDrink}</h2>
-          <p>Kind of glass: {strGlass}</p>
+          <p>
+            Kind of glass:
+            <br /> <span>{strGlass}</span>
+          </p>
           <p>
             Ingredients:
+            <br />
             {strIngredient1 ? (
-              <span>
-                {trMeasure1} - {strIngredient1}
-              </span>
+              <>
+                <span>
+                  {strMeasure1} - {strIngredient1}
+                </span>
+                <br />
+              </>
             ) : null}
             {strIngredient2 ? (
-              <span>
-                {trMeasure2} - {strIngredient2}
-              </span>
+              <>
+                <span>
+                  {strMeasure2} - {strIngredient2}
+                </span>
+                <br />
+              </>
             ) : null}
             {strIngredient3 ? (
-              <span>
-                {trMeasure3} - {strIngredient3}
-              </span>
+              <>
+                <span>
+                  {strMeasure3} - {strIngredient3}
+                </span>
+                <br />
+              </>
             ) : null}
             {strIngredient4 ? (
-              <span>
-                {trMeasure4} - {strIngredient4}
-              </span>
+              <>
+                <span>
+                  {strMeasure4} - {strIngredient4}
+                </span>
+                <br />
+              </>
             ) : null}
           </p>
           <p>
             Instructions:
+            <br />
             <span>{strInstructions}</span>
           </p>
         </aside>
@@ -79,7 +97,7 @@ export const getStaticProps = async (req) => {
   );
 
   return {
-    props: { drink },
+    props: { drink: drink.drinks[0] },
     revalidate: 30,
   };
 };

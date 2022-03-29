@@ -25,13 +25,13 @@ const cocktailDetail = ({
       <section>
         <aside>
           <div className="imgWrapper">
-            {/* <Image
+            <Image
               src={strDrinkThumb}
               alt={strDrink}
               width={300}
               height={450}
               layout={"responsive"}
-            /> */}
+            />
           </div>
           <h2>{strDrink}</h2>
           <p>Kind of glass: {strGlass}</p>
